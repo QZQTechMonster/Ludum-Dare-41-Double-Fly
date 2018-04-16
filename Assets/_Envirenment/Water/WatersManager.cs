@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FiresManager : ForceBase {
+public class WatersManager : ForceBase {
 
-    static FiresManager instance;
-    public static FiresManager Instance
-    {
-        get
-        {
-            if (instance == null)
-                instance = FindObjectOfType(typeof(FiresManager)) as FiresManager;
+    static WatersManager instance;
+    
+    public static WatersManager Instance {
+		get {
+			if(instance == null)
+                instance = FindObjectOfType(typeof(WatersManager)) as WatersManager;
             return instance;
         }
-    }
+	}
 
     protected override void UpdateActive()
     {
-        if (Time.time - lastChangedTime < minChangeTime) return;
+        if(Time.time - lastChangedTime < minChangeTime) return;
         // if (activeIndex > 0 &&
         //     GetSqrDistanceToPlayer(activeIndex) > GetSqrDistanceToPlayer(activeIndex - 1))
         // {
@@ -27,7 +26,7 @@ public class FiresManager : ForceBase {
         // }
 
         if (activeIndex < obj.Length - 1 &&
-            obj[activeIndex].transform.position.x < player.position.x)
+            obj[activeIndex+1].transform.position.x < player.position.x)
         {
             ChangeActive(activeIndex + 1);
             lastChangedTime = Time.time;
@@ -37,7 +36,6 @@ public class FiresManager : ForceBase {
 
     void Start() {
         player = Player.Instance.transform;
-        base.StartWithTag("Fire");
+        base.StartWithTag("Water");
     }
-	
 }

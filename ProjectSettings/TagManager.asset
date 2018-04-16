@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fire
   - FireManager
+  - Water
+  - WaterManager
+  - World
   layers:
   - Default
   - TransparentFX
