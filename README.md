@@ -1,2 +1,9 @@
 # Ludum-Dare-41-Double-Fly
-The game made by my friend JunjieGao and I for Ludum Dare 41.
+
+This game is made by:
+ - Samuel Qian (Programmer)
+ - Junjie Gao (Artist)
+
+This game is made for [Ludum Dare 41](http://ldjam.com/events/ludum-dare/41).
+
+And we will release a demo before 2018/04/23.
