@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,13 +7,22 @@ public class Player : MonoBehaviour {
 
     static Player instance;
 
+    /**
+    * move
+    */
     [SerializeField] float maxSpeed, maxForce;
     Rigidbody2D rgb;
 
-    // envirenment
+    /**
+    * envirenment
+    */
     Vector3 fireActivePos, waterActivePos;
     bool isNight;
 
+    /**
+    * Line
+    */
+    [SerializeField] LineRenderer nightLine, dayLine;
 
     public static Player Instance
     {
@@ -32,12 +42,23 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
+        UpdateLines();
+        
         if(isNight) {
             Seek(fireActivePos);
         } else {
             Flee(waterActivePos);
         }
         
+    }
+
+    private void UpdateLines()
+    {
+        nightLine.SetPosition(0, transform.position);
+        nightLine.SetPosition(1, fireActivePos);
+
+        dayLine.SetPosition(0, transform.position);
+        dayLine.SetPosition(1, waterActivePos);
     }
 
     void Seek(Vector3 targetPos) {
@@ -63,6 +84,13 @@ public class Player : MonoBehaviour {
 
     void ChangeNight(bool isNight) {
         this.isNight = isNight;
+        if(isNight) {
+            nightLine.startWidth = 0.3f;
+            dayLine.startWidth = 3f;
+        } else {
+            nightLine.startWidth = 3f;
+            dayLine.startWidth = 0.3f;
+        }
     }
 
     void OnDrawGizmos()

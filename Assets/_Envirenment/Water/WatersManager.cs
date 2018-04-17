@@ -5,7 +5,8 @@ using UnityEngine;
 public class WatersManager : ForceBase {
 
     static WatersManager instance;
-    
+    float offset = 0.5f;
+
     public static WatersManager Instance {
 		get {
 			if(instance == null)
@@ -16,18 +17,11 @@ public class WatersManager : ForceBase {
 
     protected override void UpdateActive()
     {
-        if(Time.time - lastChangedTime < minChangeTime) return;
-        // if (activeIndex > 0 &&
-        //     GetSqrDistanceToPlayer(activeIndex) > GetSqrDistanceToPlayer(activeIndex - 1))
-        // {
-        //     ChangeActive(activeIndex - 1);
-        //     lastChangedTime = Time.time;
-        //     return;
-        // }
-
         if (activeIndex < obj.Length - 1 &&
-            obj[activeIndex+1].transform.position.x < player.position.x)
+            obj[activeIndex+1].transform.position.x + offset < player.position.x)
         {
+            obj[activeIndex].GetComponent<Water>().SetNotActive();
+            obj[activeIndex + 1].GetComponent<Water>().SetActive();
             ChangeActive(activeIndex + 1);
             lastChangedTime = Time.time;
             return;
@@ -37,5 +31,6 @@ public class WatersManager : ForceBase {
     void Start() {
         player = Player.Instance.transform;
         base.StartWithTag("Water");
+        obj[activeIndex].GetComponent<Water>().SetActive();
     }
 }

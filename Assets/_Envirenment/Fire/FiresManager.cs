@@ -5,6 +5,8 @@ using UnityEngine;
 public class FiresManager : ForceBase {
 
     static FiresManager instance;
+
+    float offset = 0.5f;
     public static FiresManager Instance
     {
         get
@@ -17,18 +19,12 @@ public class FiresManager : ForceBase {
 
     protected override void UpdateActive()
     {
-        if (Time.time - lastChangedTime < minChangeTime) return;
-        // if (activeIndex > 0 &&
-        //     GetSqrDistanceToPlayer(activeIndex) > GetSqrDistanceToPlayer(activeIndex - 1))
-        // {
-        //     ChangeActive(activeIndex - 1);
-        //     lastChangedTime = Time.time;
-        //     return;
-        // }
-
         if (activeIndex < obj.Length - 1 &&
-            obj[activeIndex].transform.position.x < player.position.x)
+            obj[activeIndex].transform.position.x + offset < player.position.x)
         {
+            obj[activeIndex].GetComponent<Fire>().SetNotActive();
+            obj[activeIndex + 1].GetComponent<Fire>().SetActive();
+
             ChangeActive(activeIndex + 1);
             lastChangedTime = Time.time;
             return;
@@ -38,6 +34,7 @@ public class FiresManager : ForceBase {
     void Start() {
         player = Player.Instance.transform;
         base.StartWithTag("Fire");
+        obj[activeIndex].GetComponent<Fire>().SetActive();
     }
 	
 }
