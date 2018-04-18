@@ -210,7 +210,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1270, y: 720}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -262,11 +262,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 120110408903641020, guid: 6f4b5bc556d064c2a81c5159ede24def,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4557253854252156, guid: 6f4b5bc556d064c2a81c5159ede24def, type: 2}
       propertyPath: m_LocalPosition.x
       value: -6.94
@@ -299,44 +294,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 120110408903641020, guid: 6f4b5bc556d064c2a81c5159ede24def,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 120110408903641020, guid: 6f4b5bc556d064c2a81c5159ede24def,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 120110408903641020, guid: 6f4b5bc556d064c2a81c5159ede24def,
-        type: 2}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 120110408903641020, guid: 6f4b5bc556d064c2a81c5159ede24def,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 0.62695026
-      objectReference: {fileID: 0}
-    - target: {fileID: 120110408903641020, guid: 6f4b5bc556d064c2a81c5159ede24def,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 120110408903641020, guid: 6f4b5bc556d064c2a81c5159ede24def,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
-      value: -7.6990175
-      objectReference: {fileID: 0}
-    - target: {fileID: 120110408903641020, guid: 6f4b5bc556d064c2a81c5159ede24def,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outSlope
-      value: -7.6990175
-      objectReference: {fileID: 0}
-    - target: {fileID: 120777714778897644, guid: 6f4b5bc556d064c2a81c5159ede24def,
-        type: 2}
-      propertyPath: m_Parameters.widthMultiplier
+    - target: {fileID: 4557253854252156, guid: 6f4b5bc556d064c2a81c5159ede24def, type: 2}
+      propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -595,6 +554,7 @@ GameObject:
   - component: {fileID: 1208004110}
   - component: {fileID: 1208004109}
   - component: {fileID: 1208004111}
+  - component: {fileID: 1208004112}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -617,8 +577,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.8999939, y: -3.699997}
-  m_SizeDelta: {x: 1311.2, y: 753.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 3660, y: 745.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208004109
 MonoBehaviour:
@@ -666,6 +626,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   night: {fileID: 21300000, guid: be1909c0880a94e4d8897c254f79ab4d, type: 3}
   day: {fileID: 21300000, guid: 2e541a95d8f5d4c388cfdb882569d159, type: 3}
+--- !u!114 &1208004112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1208004107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a2db68680d749c2982014ccd37cfaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!4 &1232685014 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4710903519272170, guid: 8aa5cec934a184b0292f1da15de880bb,

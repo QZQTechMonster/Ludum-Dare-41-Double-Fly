@@ -7,9 +7,10 @@ public class Background : MonoBehaviour {
     [SerializeField] Sprite night, day;
     Image image;
 
-	void Start() {
+    void Start() {
         image = GetComponent<Image>();
         World.Instance.notifyNightChange += ChangeNight;
+
     }
 
 	void ChangeNight(bool isNight) {
