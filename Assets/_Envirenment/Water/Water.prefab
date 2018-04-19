@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4273579969908372}
   - component: {fileID: 212220706482233710}
   - component: {fileID: 114158273671459022}
+  - component: {fileID: 95449747787460244}
   m_Layer: 0
   m_Name: Water
   m_TagString: Water
@@ -35,12 +36,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176965586597922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.63, y: -4.2799997, z: 0}
+  m_LocalPosition: {x: -1.2115812, y: -2.1481159, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95449747787460244
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1176965586597922}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: f66355bb260e5470a9d2b963d067289c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114158273671459022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,8 +106,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0.5034485, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4af906ab3eefe4203a4c803e50740ae2, type: 3}
+  m_Color: {r: 0, g: 0.6689658, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

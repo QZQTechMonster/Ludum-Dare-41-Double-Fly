@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class World : MonoBehaviour {
 
     static World instance;
-    [SerializeField] Text textNight;
     public static World Instance
     {
         get
@@ -36,11 +35,6 @@ public class World : MonoBehaviour {
 	void ChangeNight() {
         isNight = !isNight;
         notifyNightChange(isNight);
-        if(isNight) {
-            textNight.text = "Night";
-        } else {
-            textNight.text = "Day";
-        }
         
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class BackgroundMove : MonoBehaviour {
 
         float width = rectTransform.offsetMax.x - rectTransform.offsetMin.x;
         maxX = width / 2f - Screen.width / 2f;
-        minX = -width / 2f + Screen.width / 2f;
+        minX = -width / 2f - Screen.width / 2f;
 
         thisPosition = rectTransform.anchoredPosition3D;
         thisPosition.x = maxX;
@@ -31,5 +32,13 @@ public class BackgroundMove : MonoBehaviour {
         if (thisPosition.x < minX) thisPosition.x += (maxX - minX);
         lastPlayerX = playerTransform.position.x;
         rectTransform.anchoredPosition3D = thisPosition;
+    }
+
+	public void setSpeed(string newSpeed) {
+        print(newSpeed);
+		if(newSpeed.Length != 0)
+            speed = Convert.ToSingle(newSpeed);
+        
+        
     }
 }

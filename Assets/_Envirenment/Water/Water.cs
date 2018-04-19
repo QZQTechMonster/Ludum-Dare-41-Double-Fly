@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Water : MonoBehaviour {
-    [SerializeField] Sprite activeSprite, notActiveSprite;
-    SpriteRenderer spriteRenderer;
+    Animator animator;
 
     void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
     public void SetActive()
     {
-        spriteRenderer.sprite = activeSprite;
+        animator.SetBool("isActive", true);
     }
 
     public void SetNotActive()
     {
-        spriteRenderer.sprite = notActiveSprite;
+        animator.SetBool("isActive", false);
     }
 }
