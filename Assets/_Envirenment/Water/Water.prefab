@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176965586597922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2115812, y: -2.1481159, z: 0}
+  m_LocalPosition: {x: 35.07515, y: -4.5234184, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,7 @@ Animator:
   m_GameObject: {fileID: 1176965586597922}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: f66355bb260e5470a9d2b963d067289c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2af4d9ff1f1ba4190bac398017d32f97, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -70,8 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e043c140c4b40ccaf1a1873572fcc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeSprite: {fileID: 21300000, guid: 0d066005e56804556907ebf9dc3e06b8, type: 3}
-  notActiveSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!212 &212220706482233710
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -86,7 +84,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: adba5030efc4e4869addba26bd3b2ce3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,7 +105,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4af906ab3eefe4203a4c803e50740ae2, type: 3}
-  m_Color: {r: 0, g: 0.6689658, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
