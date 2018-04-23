@@ -107,12 +107,20 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void OnDrawGizmos()
+    
+    void OnTriggerExit2D(Collider2D other)
     {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, waterActivePos);
+        if(GameController.instance.isGod) return;
+        if (other.tag == "Fire")
+        {
+            bat.SetTrigger("Die");
+            moth.SetTrigger("Die");
+            rgb.isKinematic = true;
+            rgb.velocity = Vector2.zero;
+            GameController.instance.StartCoroutine("BackMenuInOneSecond");
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, fireActivePos);        
+        }
     }
+
+
 }

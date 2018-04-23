@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MadBat : MonoBehaviour {
+public class AudioActive : MonoBehaviour {
 
+
+    [SerializeField] GameObject audioD;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag != "Player") return;
-        World.Instance.ChangeNightByBool(false);
+        audioD.SetActive(true);
         Destroy(gameObject);
     }
 }

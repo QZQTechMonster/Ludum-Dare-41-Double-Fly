@@ -5,7 +5,7 @@ using UnityEngine;
 public class WatersManager : ForceBase {
 
     static WatersManager instance;
-    float offset = 1.5f;
+    float offset = 2f;
 
     public static WatersManager Instance {
 		get {

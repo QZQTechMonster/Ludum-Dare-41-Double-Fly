@@ -77,7 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0094a36c9f752456a98530379b44e72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 0
   tutorialText: {fileID: 0}
   tutorialString: I am <b>Bat</b>. I don't want her be burnt to death.\n But I can
     only move at <b>daytime</b>.

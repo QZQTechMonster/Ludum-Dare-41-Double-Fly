@@ -5,6 +5,7 @@ using UnityEngine;
 public class Die : MonoBehaviour {
 
     [SerializeField] Animator player, bat;
+    [SerializeField] GameObject FinalCG;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,6 +21,7 @@ public class Die : MonoBehaviour {
         }
 
         if(other.tag == "Bat") {
+            StartCoroutine("ShowFinalCG");
             bat.SetTrigger("Die");
 		}
 
@@ -29,4 +31,10 @@ public class Die : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         GameObject.FindGameObjectWithTag("Bat").GetComponent<Rigidbody2D>().isKinematic = false;
 	}
+
+    IEnumerator ShowFinalCG()
+    {
+        yield return new WaitForSeconds(3f);
+        FinalCG.SetActive(true);
+    }
 }

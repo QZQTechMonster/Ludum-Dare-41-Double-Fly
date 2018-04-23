@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class GameSpeedController : MonoBehaviour {
 
-    [SerializeField] float gameSpeed = 1;
+    float gameSpeed = 0;
     [SerializeField] Text tutorialText;
 	[SerializeField] string tutorialString;
 
     Rigidbody2D rgb;
 
     bool isStop = false;
+    float activeTime;
+
     [SerializeField] bool canControlAfterDestroy;
 
     void Start() {
@@ -19,16 +21,20 @@ public class GameSpeedController : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag != "Player") return;
+        World.Instance.SetControl(false);
         tutorialText.text = tutorialString;
         tutorialText.text = tutorialText.text.Replace("\\n", "\n");
         rgb.isKinematic = true;
         Time.timeScale = gameSpeed;
         isStop = true;
+        activeTime = Time.realtimeSinceStartup;
+
     }
 
 
 	void Update() {
-        if (isStop && Input.GetKeyDown(KeyCode.Space)) {
+        if (isStop && Time.realtimeSinceStartup - activeTime > 1 &&
+        Input.GetKeyDown(KeyCode.Space)) {
             Time.timeScale = 1;
             tutorialText.text = "";
             World.Instance.ChangeNight();
