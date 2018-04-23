@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
     static Player instance;
     // [SerializeField] GameObject bat, moth;
     [SerializeField] Animator bat, moth;
+    [SerializeField] Text tutorialText;
     /**
     * move
     */
@@ -117,6 +119,7 @@ public class Player : MonoBehaviour {
             moth.SetTrigger("Die");
             rgb.isKinematic = true;
             rgb.velocity = Vector2.zero;
+            tutorialText.text = "Oh no!!! Moth Died";
             GameController.instance.StartCoroutine("BackMenuInOneSecond");
 
         }
