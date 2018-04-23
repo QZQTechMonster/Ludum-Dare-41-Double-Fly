@@ -26,7 +26,6 @@ public class FiresManager : ForceBase {
             obj[activeIndex + 1].GetComponent<Fire>().SetActive();
 
             ChangeActive(activeIndex + 1);
-            lastChangedTime = Time.time;
             return;
         }
     }

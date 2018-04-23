@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Water : MonoBehaviour {
     Animator animator;
+    [SerializeField] GameObject mlight;
 
     void Awake()
     {
@@ -12,10 +13,18 @@ public class Water : MonoBehaviour {
     public void SetActive()
     {
         animator.SetBool("isActive", true);
+        mlight.SetActive(true);
     }
 
     public void SetNotActive()
     {
         animator.SetBool("isActive", false);
+        StartCoroutine("CloseLight");
+    }
+
+    IEnumerator CloseLight()
+    {
+        yield return new WaitForSeconds(0.8f);
+        mlight.SetActive(false);
     }
 }

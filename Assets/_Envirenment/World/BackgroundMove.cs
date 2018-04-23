@@ -9,7 +9,7 @@ public class BackgroundMove : MonoBehaviour {
     Transform playerTransform;
     float lastPlayerX, minX, maxX;
     Vector3 thisPosition;
-    [SerializeField] float speed;
+    public float speed;
 
 	void Start () {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -34,11 +34,7 @@ public class BackgroundMove : MonoBehaviour {
         rectTransform.anchoredPosition3D = thisPosition;
     }
 
-	public void setSpeed(string newSpeed) {
-        print(newSpeed);
-		if(newSpeed.Length != 0)
-            speed = Convert.ToSingle(newSpeed);
-        
-        
+	public void setSpeed(float newSpeed) {
+        speed = newSpeed;
     }
 }

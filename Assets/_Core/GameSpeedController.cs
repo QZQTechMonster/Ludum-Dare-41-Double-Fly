@@ -9,12 +9,19 @@ public class GameSpeedController : MonoBehaviour {
     [SerializeField] Text tutorialText;
 	[SerializeField] string tutorialString;
 
-    bool isStop = false;
+    Rigidbody2D rgb;
 
+    bool isStop = false;
+    [SerializeField] bool canControlAfterDestroy;
+
+    void Start() {
+        rgb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+    }
     void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag != "Player") return;
-        print("trig");
         tutorialText.text = tutorialString;
+        tutorialText.text = tutorialText.text.Replace("\\n", "\n");
+        rgb.isKinematic = true;
         Time.timeScale = gameSpeed;
         isStop = true;
     }
@@ -22,9 +29,11 @@ public class GameSpeedController : MonoBehaviour {
 
 	void Update() {
         if (isStop && Input.GetKeyDown(KeyCode.Space)) {
-            print("Des");
             Time.timeScale = 1;
             tutorialText.text = "";
+            World.Instance.ChangeNight();
+            World.Instance.SetControl(canControlAfterDestroy);
+            rgb.isKinematic = false;
             Destroy(gameObject);
         }
 	}

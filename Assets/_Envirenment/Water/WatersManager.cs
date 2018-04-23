@@ -5,7 +5,7 @@ using UnityEngine;
 public class WatersManager : ForceBase {
 
     static WatersManager instance;
-    float offset = 0.5f;
+    float offset = 1.5f;
 
     public static WatersManager Instance {
 		get {
@@ -23,7 +23,6 @@ public class WatersManager : ForceBase {
             obj[activeIndex].GetComponent<Water>().SetNotActive();
             obj[activeIndex + 1].GetComponent<Water>().SetActive();
             ChangeActive(activeIndex + 1);
-            lastChangedTime = Time.time;
             return;
         }
     }

@@ -9,6 +9,7 @@ TagManager:
   - Water
   - WaterManager
   - World
+  - Bat
   layers:
   - Default
   - TransparentFX

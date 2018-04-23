@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032022931275196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.12, y: 0, z: 0}
+  m_LocalPosition: {x: 404.0827, y: -0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,4 +79,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSpeed: 0
   tutorialText: {fileID: 0}
-  tutorialString: Press "Space" and change to daytime
+  tutorialString: I am <b>Bat</b>. I don't want her be burnt to death.\n But I can
+    only move at <b>daytime</b>.
+  canControlAfterDestroy: 0

@@ -6,7 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     static Player instance;
-
+    // [SerializeField] GameObject bat, moth;
+    [SerializeField] Animator bat, moth;
     /**
     * move
     */
@@ -61,17 +62,16 @@ public class Player : MonoBehaviour {
         dayLine.SetPosition(1, waterActivePos);
     }
 
-    void Seek(Vector3 targetPos) {
-        rgb.AddForce((targetPos - transform.position).normalized * maxForce);
-        if(rgb.velocity.magnitude > maxSpeed) {
-            rgb.velocity = rgb.velocity.normalized * maxSpeed;
-        }
-    }
-    void Flee(Vector3 targetPos) {
-        rgb.AddForce(-(targetPos - transform.position).normalized * maxForce);
+    void LateUpdate() {
         if (rgb.velocity.magnitude > maxSpeed) {
             rgb.velocity = rgb.velocity.normalized * maxSpeed;
         }
+    }
+    void Seek(Vector3 targetPos) {
+        rgb.AddForce((targetPos - transform.position).normalized * maxForce);
+    }
+    void Flee(Vector3 targetPos) {
+        rgb.AddForce(-(targetPos - transform.position).normalized * maxForce);
     }
     
     void ChangeFireActive(Transform fire) {
@@ -85,9 +85,23 @@ public class Player : MonoBehaviour {
     void ChangeNight(bool isNight) {
         this.isNight = isNight;
         if(isNight) {
+            // bat.SetActive(false);
+            // moth.SetActive(true);
+            bat.SetBool("isActive", false);
+            moth.SetBool("isActive", true);
+            moth.transform.position -= new Vector3(0, 0, 0.1f);
+            bat.transform.position += new Vector3(0, 0, 0.1f);
+
             nightLine.startWidth = 0.3f;
             dayLine.startWidth = 3f;
         } else {
+            // bat.SetActive(true);
+            // moth.SetActive(false);
+            bat.SetBool("isActive", true);
+            moth.SetBool("isActive", false);
+            bat.transform.position -= new Vector3(0, 0, 0.1f);
+            moth.transform.position += new Vector3(0, 0, 0.1f);
+
             nightLine.startWidth = 3f;
             dayLine.startWidth = 0.3f;
         }

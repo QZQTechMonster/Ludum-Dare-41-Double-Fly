@@ -6,8 +6,6 @@ public abstract class ForceBase : MonoBehaviour
 {
     protected GameObject[] obj;
     protected int activeIndex;
-    protected float lastChangedTime = 0;
-    [SerializeField] protected float minChangeTime;
 
     protected Transform player;
 
